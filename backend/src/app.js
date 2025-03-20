@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import Razorpay from "razorpay"
+// import Razorpay from "razorpay"
 
 const app = express();
 
@@ -13,10 +13,6 @@ app.use(express.static("public"))
 app.use(cookieParser())
 
 
-export const instance = new Razorpay({
-    key_id: process.env.KEY_ID,
-    key_secret: process.env.KEY_SECRET
-})
 
 //student routes
 import studentRouter from "./routes/student.routes.js";
