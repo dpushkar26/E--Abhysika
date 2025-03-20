@@ -1,7 +1,7 @@
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
-import {instance}  from "../app.js"
+// import {instance}  from "../app.js"
 import crypto from "crypto"
 import {payment} from "../models/payment.model.js"
 import { Teacher } from "../models/teacher.model.js";
@@ -26,12 +26,6 @@ const coursePayment = asyncHandler(async(req,res)=>{
       .json( new ApiResponse(200, order,"order fetched"))
 })
 
-
-const getkey = asyncHandler(async(req,res)=>{
-  return res
-  .status(200)
-  .json(new ApiResponse(200,{key:process.env.KEY_ID}, "razor key fetched"))
-})
 
 
 const coursePaymentConfirmation = asyncHandler(async(req,res)=>{
@@ -158,4 +152,4 @@ const withdrawAmount = asyncHandler(async(req,res)=>{
 
 
 
-export {coursePayment, getkey, coursePaymentConfirmation, teacherAmount, withdrawAmount}
+export {coursePayment,  coursePaymentConfirmation, teacherAmount, withdrawAmount}
